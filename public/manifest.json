@@ -1,0 +1,12 @@
+{
+  "name": "Ekaanksh Patil | DevOps & AI Developer",
+  "short_name": "EP Portfolio",
+  "description": "Building Intelligent Infrastructure & Automation Systems",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#05080f",
+  "theme_color": "#6366f1",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

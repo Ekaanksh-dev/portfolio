@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden; /* required for iOS Safari */
+}
+
+body {
+  background: #05080f;
+  color: #f1f5f9;
+  font-family: "Courier New", monospace;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+a {
+  cursor: pointer;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar       { width: 4px; }
+::-webkit-scrollbar-track { background: #05080f; }
+::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 100px; }
+
+/* Animations */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+@keyframes floatUp {
+  0%, 100% { transform: translateY(0) rotate(-1.5deg); }
+  50%       { transform: translateY(-14px) rotate(1.5deg); }
+}
+
+@keyframes spinRing {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.35; }
+  50%       { opacity: 0.75; }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─────────────────────────────────────
+   Responsive breakpoints
+   (back-up for any inline-style gaps)
+───────────────────────────────────── */
+
+/* Tablet */
+@media (max-width: 960px) {
+  .hero-grid    { grid-template-columns: 1fr !important; }
+  .fi, .fi-icon { display: none !important; }
+
+  .hero-right {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+  }
+
+  .hero-avatar-block {
+    grid-column: 1 / -1 !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+}
+
+/* Large mobile */
+@media (max-width: 760px) {
+  .exp-grid   { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .about-grid,
+  .about-cards { grid-template-columns: 1fr !important; gap: 14px !important; }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .hero-right        { grid-template-columns: 1fr !important; }
+  .hero-avatar-block { grid-column: auto !important; }
+  .hero-btns         { flex-direction: column !important; }
+  .hero-btns a       { width: 100% !important; justify-content: center !important; }
+
+  .projects-grid { grid-template-columns: 1fr !important; gap: 14px !important; }
+  .skills-grid   { grid-template-columns: 1fr !important; gap: 10px !important; }
+  .gh-cards      { grid-template-columns: 1fr !important; gap: 10px !important; }
+
+  .nav-links     { display: none !important; }
+  .nav-hamburger { display: flex !important; }
+}
+
+@media (max-width: 600px) {
+  .cf-row { grid-template-columns: 1fr !important; gap: 0 !important; }
+}
